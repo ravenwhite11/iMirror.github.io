@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+body {
+  margin: 0;
+  font-family:  "Noto Sans TC","微軟正黑體";
+  color: #808080;
+}
+* {box-sizing: border-box;} /* DIV設定的寬度已包含 內容寬度、內距、邊框寬度 */
+#navbar {
+  overflow: hidden;
+  padding: 65px 25px;
+  transition: 0.4s;
+  position: fixed; top: 0; z-index: 99;
+  width: 100%;
+  background: rgba(255,255,255,0);
+}
+#navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  
+}
+#navbar a:hover {
+  background-color: rgba(114,129,140,0.3);
+  transition: 0.4s;
+}
+#navbar #nav05:hover{
+  cursor: help;
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+#navbar-right {
+  float: right;
+}
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+
+#main{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/jess-harding-lqT6NAmTaiY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Rajdhani", sans-serif;
+}
+.glass {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/jess-harding-lqT6NAmTaiY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-clip-path: inset(10em);
+          clip-path: inset(10em);
+  filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drop-shadow {
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drop-shadow:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 10em;
+  height: calc(100% - 20em);
+  width: calc(100% - 20em);
+  border-top: 2px solid rgba(225, 225, 225, 0.2);
+  border-left: 1px solid rgba(225, 225, 225, 0.1);
+  border-right: 1px solid rgba(225, 225, 225, 0.3);
+  z-index: 2;
+}
+.drop-shadow > span {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  font-size: 4em;
+  letter-spacing: 0.75em;
+  padding-left: 0.375em;
+}
+
+@media (max-width: 980px) {
+  .glass {
+    -webkit-clip-path: inset(5em);
+            clip-path: inset(5em);
+  }
+  .drop-shadow:before {
+    top: 5em;
+    width: calc(100% - 10em);
+  }
+  .drop-shadow > span {
+    font-size: 4em;
+  }
+}
+@media (max-width: 640px) {
+  .drop-shadow > span {
+    font-size: 2em;
+  }
+}
+
+
+/* 簡介 */
+#second{
+  padding: 90px 170px 30px 170px;  
+  text-align: center;
+}
+#second-title{
+  font-size: 40pt;
+  color: #FBA3A3;
+  letter-spacing: 10px;
+}
+#second-title-2{
+  font-size: 20pt;
+  color: gray;
+  text-align: center;
+  margin: 0;
+}
+#second-content{
+  line-height: 30px;
+  font-size: 13pt;
+  text-align: left;
+}
+
+/* 圖片gallery */
+.image-gallery {
+  margin: 0 auto;
+  display: table;
+  padding-bottom: 180px;
+}
+.primary,
+.thumbnails {
+  display: table-cell;
+}
+.thumbnails {
+  position: relative; right: 30px;
+}
+.primary {
+  width: 600px;
+  height: 400px;
+  padding-right: 20px;
+  background-color: white;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.thumbnail:hover .thumbnail-image ,.selected .thumbnail-image{
+  cursor: pointer;
+  border: 0.5px dotted gray;
+  
+}
+
+.thumbnail-image {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 4px solid transparent;
+}
+
+/* 標題 */
+#bgimg{
+  line-height: 400px;/*url("../IMG/img1.jpg")*/
+  opacity: 0.7;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: auto;
+}
+#bgimg_text{
+  letter-spacing: 10px;
+  font-size: 40px;
+  color: white;
+  display: inline-block;
+  height: auto;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+
+/* 五大特色 */
+#third{
+  background-color: ;
+  padding: 50px 160px 150px 160px;
+}
+#third-title{
+  font-size: 40pt;
+  color: #FBA3A3;
+  text-align: center;
+  letter-spacing: 10px;
+}
+.row,
+.row > .column {
+  padding: px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 20%;
+}
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+.content img{
+  border: 1px dotted #717171;
+}
+.content h3{
+  background-color: #696969;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  padding: 15px;
+}
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* 學術vs實務 */
+#forth{
+  margin-top: 50px;
+  background-color: #F8D3D3;
+  padding: 20px 100px 40px 100px;
+  box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#forth-title{
+  font-size: 40pt;
+  background-color: rgba(255, 247, 247,0.8);
+  text-align: center;
+}
+.forth-content p{
+  position: relative; bottom: 10px;
+}
+
+/* 影片 */
+#fifth{
+  padding: 100px 0px 100px 0px;
+  text-align: center;
+}
+#fifth-title{
+  font-size: 40pt;
+  color: #FBA3A3;
+  letter-spacing: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* 頁尾 */
+#footer{
+  background-color: #BDBFB2;
+  height: 300px;
+  padding: 40px 140px;
+}
+.column0 {
+  float: left;
+  width: 33.33%;
+  text-align: left;
+  padding: 0px 70px;
+}
+/* Clear floats after the columns */
+.row0:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer-address{
+  padding: 0px 40px;
+}
+.footer-content h3{
+}
+.footer-content a{
+  color: #808080;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 0px 5px 0px;
+  position: relative;
+}
+.footer-content a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.footer-content a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.sp01{
+  border-bottom: 1.5px #FFA1A1 solid;
+}
+.sp02{
+  border-bottom: 1.5px #A1DCFF solid;
+}
+.animation1:hover{
+  transition-duration:0.5s;
+  opacity: 0.7;
+}
+.mh11{
+  color: rgba(255,255,255,1);
+  transition: all 0.5s;
+  position: relative;
+  cursor: pointer;
+}
+.mh11:before{
+  content: '';
+  position: absolute;top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.mh11:hover:before{
+  opacity: 0;
+  transform: scale(1.3,1.3);
+}
+.mh11:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  background-color: rgba(255,255,255,0.25);
+  transition: all 0.3s;
+  transform: scale(0.5,0.5);
+}
+.mh11:hover:after{
+  opacity: 1 ;
+  transform: scale(1,1);
+}
+
+@media only screen and (max-width: 1024px) {
+  .bgimg {
+    background-attachment: scroll;
+  }
+}
+
+.geo-alt-fill {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-geo-alt-fill' viewBox='0 0 16 16'%3E%3Cpath d='M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z'/%3E%3C/svg%3E");
+}
