@@ -7,24 +7,35 @@
 		<title>iMirror | 組員資料</title>
 		<link rel="icon" href="IMG/icon.png">
 		<link rel="stylesheet" href="CSS/team.css">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 			body{font-family:"Noto Sans TC";}
 			body::-webkit-scrollbar {display: none;}
-			
+			html {
+				scroll-behavior: smooth;
+			}
 		</style>
 	</head>
 	<body>
-		<div>
-			<div id="mySidenav" >
-			  <a href="index.html" id="iMirror">iMirror</a>
-			  <a href="team.html" id="team">組員資料</a>
-			  <a href="system01.html" id="show">展示-起始頁面</a>
-			  <a href="system02.html" id="show1">展示-面徵健檢分析鏡</a>
-			  <a href="system03.html" id="show2">展示-其他功能</a>
-			</div>
+		<div id="navbar">
+			<a href="index.html" id="logo">iMirror</a>
+				<div id="navbar-right">
+					<a id="nav01" href="team.html" >組員資料</a>
+					<a id="nav02" href="system01.html">展示-起始頁面</a>
+					<a id="nav03" href="system02.html">展示-面徵健檢分析鏡</a>
+					<a id="nav04" href="system03.html">展示-其他功能</a>
+				</div>
 		</div>
+		<div id="bgimg">
+			<span id="bgimg_text" >iMirror組員資料</span>
+		</div>
+
+		<div id="second">
+			<h1 id="second-title">iMirror團隊成員介紹</h1>
+			<p id="second-title-2">以下來自中原大學資管系的四位同學</p>
+		</div>
+
 		<div class="container">	
 			<div id="bl-main" class="bl-main">
 				<section>
@@ -128,21 +139,54 @@
 		</div><!-- /container -->
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="js/boxlayout.js"></script>
-		<script  src="JS/team.js"></script>
-		<script>
-			$(function() {
-				Boxlayout.init();
-			});
-		</script>
-		<script src="https://tympanus.net/codrops/adpacks/csscustom.js"></script> 
-		<script src="https://tympanus.net/codrops/wp-content/plugins/oiopub-direct/js.php?type=banner&align=center&zone=1"></script>
-	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/boxlayout.js"></script>
+	<script  src="JS/team.js"></script>
+	
+	<script>
+	$(function(){
+		Boxlayout.init();
+		$('#BackTop').click(function(){ 
+			$('html,body').animate({scrollTop:0}, 333); //0.333秒完成捲動到網頁最上方
+		});
+		$(window).scroll(function() {
+			if ( $(this).scrollTop() > 80 ){ //距離網頁頂端是否超過 80 px
+				document.getElementById("navbar").style.padding = "25px 25px";
+				document.getElementById("navbar").style.background = "rgba(255,255,255,0.8)";
+				document.getElementById("logo").style.color = "#262F40";
+				document.getElementById("nav01").style.color = "#262F40";
+				document.getElementById("nav02").style.color = "#262F40";
+				document.getElementById("nav03").style.color = "#262F40";
+				document.getElementById("nav04").style.color = "#262F40";
+				document.getElementById("logo").style.fontSize = "25px";
+			} else {
+				document.getElementById("navbar").style.padding = "65px 25px";
+				document.getElementById("navbar").style.background = "rgba(255,255,255,0)";
+				document.getElementById("logo").style.color = "white";
+				document.getElementById("nav01").style.color = "white";
+				document.getElementById("nav02").style.color = "white";
+				document.getElementById("nav03").style.color = "white";
+				document.getElementById("nav04").style.color = "white";
+				document.getElementById("logo").style.fontSize = "35px";
+			}
+			if ( $(this).scrollTop() > 1000 ){
+				$('#BackTop').fadeIn(222);
+			} else {
+				$('#BackTop').stop().fadeOut(222);
+			}
+		}).scroll();
+	});
 
-</html>
-<!-- partial -->
-  
+	$('.thumbnail').on('click', function() {
+  		var clicked = $(this);
+  		var newSelection = clicked.data('big');
+  		var $img = $('.primary').css("background-image","url(" + newSelection + ")");
+  		clicked.parent().find('.thumbnail').removeClass('selected');
+  		clicked.addClass('selected');
+  		$('.primary').empty().append($img.hide().fadeIn('slow'));
+	});
+	
+	</script>
 
 </body>
 </html>
